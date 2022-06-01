@@ -1,2 +1,2 @@
 all:
-    gcc ./c-port/GetBitches.c
+	gcc ./GetBitches.c -o GetBitches.out -Ofast

@@ -25,9 +25,9 @@ void nam()
 
 void main() {
   nam();
-  input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
   while(1)
   {
+    input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
     if(strcmp(choice, "1") == 0)
     {
         printf("Have fun on your many dates to come!\n");
@@ -41,7 +41,6 @@ void main() {
     else
     {
         printf("Input invalid. Please enter either 1 or 2.\n");
-        input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
     }
   }
 } 
