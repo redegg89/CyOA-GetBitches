@@ -1,0 +1,4 @@
+void slow()
+{
+    printf("Working");
+}

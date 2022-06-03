@@ -1,7 +1,11 @@
-char choice[1];
+//char choice[5];
+int choice;
 char input(char in[]) {
     printf(in);
-    scanf("%s", choice);
-    //printf("Your choice: %s\n", choice);
-    return choice[1];
+    scanf(" %d", &choice);
+    //printf("Your choice: %d\n", choice);
+}
+void clear()
+{
+    printf("\e[1;1H\e[2J");
 }
