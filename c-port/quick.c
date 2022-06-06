@@ -1,17 +1,9 @@
-void blonde()
-{
-    printf("blonde\n");
-}
-
-void brunette()
-{
-    printf("brunette\n");
-}
-
-void redhead()
-{
-    printf("redhead\n");
-}
+#include "bitches.h"
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif
 
 void quick()
 {
@@ -31,4 +23,33 @@ void quick()
             redhead();
             break;
     }
+}
+
+void blonde()
+{
+    printf("You have chosen the blonde. How would you like to approach her?\n1. \"Wanna fuck?\"\n2. \"You alright?\"\n3. \"Mind if I join you?\"\n");
+    input("Your choice: ");
+    switch(choice)
+    {
+        case 1:
+            printf("Sure.\n");
+            #ifdef _WIN32
+            Sleep(1000);
+            #else
+            sleep(1);
+            #endif
+            clear();
+            printf("Congratulations! You got laid!\n");
+            break;
+    }
+}
+
+void brunette()
+{
+    printf("brunette\n");
+}
+
+void redhead()
+{
+    printf("redhead\n");
 }

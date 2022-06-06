@@ -1,4 +1,4 @@
 void slow()
 {
-    printf("Working");
+    printf("Working\n");
 }

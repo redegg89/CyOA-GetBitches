@@ -7,5 +7,9 @@ char input(char in[]) {
 }
 void clear()
 {
+    #ifdef _WIN32
+    system("cls");
+    #else
     printf("\e[1;1H\e[2J");
+    #endif
 }
