@@ -27,7 +27,7 @@ void nam()
   }
 }
 
-void main() {
+int main() {
   clear();
   nam();
   while(1)
@@ -43,8 +43,10 @@ void main() {
       printf("Want to get bitches real quick, I see... Good luck.\n\n");
       quick();
       break;
+    default:
+    printf("Input invalid. Please enter the number corresponding to one of the choices below:\n");
   }
-  break;
   }
+  return 0;
 } 
 

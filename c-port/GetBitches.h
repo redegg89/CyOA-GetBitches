@@ -4,6 +4,7 @@ char input(char in[]) {
     printf(in);
     scanf(" %d", &choice);
     //printf("Your choice: %d\n", choice);
+    while(getchar() != '\n');
 }
 void clear()
 {

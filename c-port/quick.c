@@ -22,6 +22,8 @@ void quick()
     case 3:
       redhead();
       break;
+    default:
+    printf("Input invalid. Please enter the number corresponding to one of the choices below:\n");
   }
 }
 
