@@ -49,10 +49,10 @@ jobs:
     #- name: configure
     #  run: ./configure
     - name: make
-      run: make linux
+      run: make mac
     - name: upload
       uses: actions/upload-artifact@v3
       with:
           name: Mac-build
           path: |
-            *.out
+            *.app
