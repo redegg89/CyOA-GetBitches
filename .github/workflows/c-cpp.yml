@@ -40,3 +40,19 @@ jobs:
           name: Linux-build
           path: |
             *.out
+  buildMac:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: make linux
+    - name: upload
+      uses: actions/upload-artifact@v3
+      with:
+          name: Mac-build
+          path: |
+            *.out
