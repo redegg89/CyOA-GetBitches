@@ -5,7 +5,7 @@
 #include <unistd.h>
 #endif
 
-void quick()
+void bar()
 {
   clear();
   printf("You are in a bar. You notice 3 girls. Which would you like to bang?\n");
@@ -43,6 +43,8 @@ void blonde()
       clear();
       printf("Congratulations! You got laid!\n");
       break;
+    case 2:
+      printf("I was just crying. Does it look like I'm okay?\n1. \"Alright fine. I'll leave you alone.\"\n");
   }
 }
 
