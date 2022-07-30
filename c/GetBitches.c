@@ -17,10 +17,8 @@ void nam()
     fgets(name, MAX_NAME_SZ, stdin);
     if ((strlen(name) > 0) && (name[strlen (name) - 1] == '\n'))
     name[strlen (name) - 1] = '\0';
-    //scanf("%s", name);
     printf("Your name is: %s? [Y/n] \n", name);
     scanf("%s", nameselect);
-    //printf(nameselect);
     if(strcmp(nameselect, "y") == 0 || strcmp(nameselect, "Y") == 0)
     {
       break;
@@ -57,24 +55,28 @@ int main() {
           case 1:
             bar();
             clear();
-            input("Would you like to continue playing?\n\n1. Yes\n2. No\n");
+            printf("Would you like to continue playing? You have currently collected %d bitches out of 50.", BitchesCollected);
+            input("\n\n1. Yes\n2. No\n");
             switch(choice)
             {
               case 2:
                 exit(0);
               case 1:
+                clear();
                 break;
             }
             break;
           case 2:
             chicken();
             clear();
-            input("Would you like to continue playing?\n\n1. Yes\n2. No\n");
+            printf("Would you like to continue playing? You have currently collected %d bitches out of 50.", BitchesCollected);
+            input("\n\n1. Yes\n2. No\n");
             switch(choice)
             {
               case 2:
                 exit(0);
               case 1:
+                clear();
                 break;
             }
             break;

@@ -14,13 +14,13 @@ void bar()
   switch(choice)
   {
     case 1:
-      blonde();
+      AlreadyCollected(0);
       break;
     case 2:
-      brunette();
+      AlreadyCollected(1);
       break;
     case 3:
-      redhead();
+      AlreadyCollected(2);
       break;
     default:
     printf("Input invalid. Please enter the number corresponding to one of the choices below:\n");
@@ -42,6 +42,7 @@ void blonde()
       #endif
       clear();
       printf("Congratulations! You got laid!\n");
+      success(0);
       break;
     case 2:
       printf("I was just crying. Does it look like I'm okay?\n1. \"Alright fine. I'll leave you alone.\"\n");
@@ -51,9 +52,11 @@ void blonde()
 void brunette()
 {
   printf("brunette\n");
+  success(1);
 }
 
 void redhead()
 {
   printf("redhead\n");
+  success(2);
 }
