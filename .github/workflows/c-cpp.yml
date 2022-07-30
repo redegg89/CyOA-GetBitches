@@ -9,15 +9,16 @@ on:
 jobs:
   buildWindows:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - uses: msys2/setup-msys2@v2
     #- name: configure
     #  run: ./configure
     - name: make
-      run: make windows
+      run: |
+        sudo apt install -y mingw-w64
+        make windows
     - name: upload
       uses: actions/upload-artifact@v3
       with:
