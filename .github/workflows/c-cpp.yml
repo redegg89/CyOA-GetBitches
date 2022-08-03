@@ -35,7 +35,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-multilib -y
+        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-9-multilib -y
         make linux
         make raspi
         make aarch64
