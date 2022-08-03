@@ -34,13 +34,50 @@ jobs:
     #- name: configure
     #  run: ./configure
     - name: make
-      run: make linux
-    - name: upload
+      run: |
+        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-9-multilib -y
+        make linux
+        make raspi
+        make aarch64
+        make i386
+        make ppc
+        make mips
+    - name: upload x86_64
       uses: actions/upload-artifact@v3
       with:
-          name: Linux-build
+          name: Linux-amd64
           path: |
-            *.out
+            GetBitches.out
+    - name: upload i386
+      uses: actions/upload-artifact@v3
+      with:
+          name: Linux-i386
+          path: |
+            GetBitches-i386.out
+    - name: upload raspi
+      uses: actions/upload-artifact@v3
+      with:
+          name: Linux-raspi
+          path: |
+            GetBitches-raspi.out
+    - name: upload aarch64
+      uses: actions/upload-artifact@v3
+      with:
+          name: Linux-aarch64
+          path: |
+            GetBitches-aarch64.out
+    - name: upload PPC
+      uses: actions/upload-artifact@v3
+      with:
+          name: Linux-PPC
+          path: |
+            GetBitches-PowerPC.out
+    - name: upload MIPS
+      uses: actions/upload-artifact@v3
+      with:
+          name: Linux-MIPS
+          path: |
+            GetBitches-MIPS.out
   buildMac:
 
     runs-on: macos-latest

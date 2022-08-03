@@ -1,6 +1,6 @@
 int choice;
 char input(char in[]) {
-    printf(in);
+    printf("%s", in);
     scanf(" %d", &choice);
     while(getchar() != '\n');
 }
