@@ -41,24 +41,39 @@ jobs:
         make i386
         make ppc
         make mips
-    - name: upload
+    - name: upload x86_64
       uses: actions/upload-artifact@v3
       with:
           name: Linux-amd64
           path: |
             GetBitches.out
+    - name: upload i386
+      uses: actions/upload-artifact@v3
+      with:
           name: Linux-i386
           path: |
             GetBitches-i386.out
+    - name: upload raspi
+      uses: actions/upload-artifact@v3
+      with:
           name: Linux-raspi
           path: |
             GetBitches-raspi.out
+    - name: upload aarch64
+      uses: actions/upload-artifact@v3
+      with:
           name: Linux-aarch64
           path: |
             GetBitches-aarch64.out
+    - name: upload PPC
+      uses: actions/upload-artifact@v3
+      with:
           name: Linux-PPC
           path: |
             GetBitches-PowerPC.out
+    - name: upload MIPS
+      uses: actions/upload-artifact@v3
+      with:
           name: Linux-MIPS
           path: |
             GetBitches-MIPS.out
