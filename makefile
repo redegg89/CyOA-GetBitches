@@ -19,7 +19,7 @@ i386:
 	strip ./GetBitches-i386.out
 ppc:
 	powerpc-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-PowerPC.out -Os
-	powerpc-linux-gnu-gccstrip ./GetBitches-PowerPC.out
+	powerpc-linux-gnu-strip ./GetBitches-PowerPC.out
 mips:
 	mips-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-MIPS.out -Os
 	mips-linux-gnu-strip ./GetBitches-MIPS.out
