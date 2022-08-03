@@ -35,7 +35,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt install gnu-defaults -y
+        sudo apt install gcc-defaults -y
         make linux
         make raspi
         make aarch64
