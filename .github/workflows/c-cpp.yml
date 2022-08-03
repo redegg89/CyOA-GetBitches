@@ -34,13 +34,34 @@ jobs:
     #- name: configure
     #  run: ./configure
     - name: make
-      run: make linux
+      run: |
+        make linux
+        make raspi
+        make aarch64
+        make i386
+        make ppc
+        make mips
     - name: upload
       uses: actions/upload-artifact@v3
       with:
-          name: Linux-build
+          name: Linux-amd64
           path: |
-            *.out
+            GetBitches.out
+          name: Linux-i386
+          path: |
+            GetBitches-i386.out
+          name: Linux-raspi
+          path: |
+            GetBitches-raspi.out
+          name: Linux-aarch64
+          path: |
+            GetBitches-aarch64.out
+          name: Linux-PPC
+          path: |
+            GetBitches-PowerPC.out
+          name: Linux-MIPS
+          path: |
+            GetBitches-MIPS.out
   buildMac:
 
     runs-on: macos-latest
