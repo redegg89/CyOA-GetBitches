@@ -14,12 +14,10 @@ void nam()
   while(1)
   {
     printf("What is your name?\n");
-    fgets(name, MAX_NAME_SZ, stdin);
-    if ((strlen(name) > 0) && (name[strlen (name) - 1] == '\n'))
-    name[strlen (name) - 1] = '\0';
+    scanf("%s", name);
     printf("Your name is: %s? [Y/n] \n", name);
     scanf("%s", nameselect);
-    if(strcmp(nameselect, "y") == 0 || strcmp(nameselect, "Y") == 0)
+    if(strcmp(nameselect, "y") == 0 || strcmp(nameselect, "Y") == 0 || strcmp(nameselect, "1") == 0)
     {
       break;
     }

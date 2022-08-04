@@ -18,7 +18,7 @@ i386:
 	gcc -m32 ./c/GetBitches.c -o GetBitches-i386.out -Os
 	strip ./GetBitches-i386.out
 ppc:
-	powerpc-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-PowerPC.out -Os
+	powerpc-linux-gnu-gcc  ./c/GetBitches.c -o GetBitches-PowerPC.out -Os
 	powerpc-linux-gnu-strip ./GetBitches-PowerPC.out
 mips:
 	mips-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-MIPS.out -Os

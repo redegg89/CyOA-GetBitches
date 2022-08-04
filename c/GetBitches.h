@@ -1,7 +1,7 @@
 int choice;
 char input(char in[]) {
     printf("%s", in);
-    scanf(" %d", choice);
+    scanf(" %d", &choice);
     while(getchar() != '\n');
     return 0;
 }
