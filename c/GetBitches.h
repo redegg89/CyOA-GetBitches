@@ -3,6 +3,7 @@ char input(char in[]) {
     printf("%s", in);
     scanf(" %d", &choice);
     while(getchar() != '\n');
+    return 0;
 }
 void clear()
 {
