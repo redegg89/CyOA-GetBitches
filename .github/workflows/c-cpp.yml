@@ -43,7 +43,7 @@ jobs:
         make ppc
         make riscv
         make mips
-        sudo chmod +x *.out
+        sudo chmod 755 *.out
     - name: upload x86_64
       uses: actions/upload-artifact@v3
       with:
