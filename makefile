@@ -2,9 +2,12 @@ linux:
 	gcc ./c/GetBitches.c -o GetBitches.out -Os
 	strip ./GetBitches.out
 
-windows:
-	x86_64-w64-mingw32-gcc -Os -o GetBitches.exe ./c/GetBitches.c
-	x86_64-w64-mingw32-strip ./GetBitches.exe
+win64:
+	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe ./c/GetBitches.c
+	x86_64-w64-mingw32-strip ./GetBitches-win64.exe
+win32:
+	i686-w64-mingw32-gcc -m32 -Os -o GetBitches-win32.exe ./c/GetBitches.c
+	i686-w64-mingw32-strip ./GetBitches-win32.exe
 mac:
 	gcc ./c/GetBitches.c -o GetBitches.app -Os -Wno-Unused-result
 	strip ./GetBitches.app
@@ -26,3 +29,11 @@ mips:
 riscv:
 	riscv64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-RISCV.out -Os
 	riscv64-linux-gnu-strip ./GetBitches-RISCV.out
+package:
+	zip Linux-amd64 GetBitches.out
+	zip Linux-raspi GetBitches-raspi.out
+	zip Linux-aarch64 GetBitches-aarch64.out
+	zip Linux-i386 GetBitches-i386.out
+	zip Linux-PPC GetBitches-PowerPC.out
+	zip Linux-MIPS GetBitches-MIPS.out
+	zip Linux-RISCV GetBitches-RISCV.out

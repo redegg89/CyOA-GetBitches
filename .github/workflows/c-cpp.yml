@@ -18,13 +18,20 @@ jobs:
     - name: make
       run: |
         sudo apt install -y mingw-w64
-        make windows
-    - name: upload
+        make win64
+        make win32
+    - name: upload win64
       uses: actions/upload-artifact@v3
       with:
-          name: windows-build
+          name: windows-x86_64
           path: |
-            *.exe
+            GetBitches-win64.exe
+    - name: upload win32
+      uses: actions/upload-artifact@v3
+      with:
+          name: windows-x86
+          path: |
+            GetBitches-win32.exe
   buildLinux:
 
     runs-on: ubuntu-20.04
@@ -43,49 +50,50 @@ jobs:
         make ppc
         make riscv
         make mips
-        sudo chmod 755 *.out
+        sudo chmod +x *.out
+        make package
     - name: upload x86_64
       uses: actions/upload-artifact@v3
       with:
           name: Linux-amd64
           path: |
-            GetBitches.out
+            Linux.zip
     - name: upload i386
       uses: actions/upload-artifact@v3
       with:
           name: Linux-i386
           path: |
-            GetBitches-i386.out
+            Linux-i386.zip
     - name: upload raspi
       uses: actions/upload-artifact@v3
       with:
           name: Linux-raspi
           path: |
-            GetBitches-raspi.out
+            Linux-raspi.zip
     - name: upload aarch64
       uses: actions/upload-artifact@v3
       with:
           name: Linux-aarch64
           path: |
-            GetBitches-aarch64.out
+            Linux-aarch64.zip
     - name: upload PPC
       uses: actions/upload-artifact@v3
       with:
           name: Linux-PPC
           path: |
-            GetBitches-PowerPC.out
+            Linux-PowerPC.zip
     - name: upload MIPS
       uses: actions/upload-artifact@v3
       with:
           name: Linux-MIPS
           path: |
-            GetBitches-MIPS.out
+            Linux-MIPS.zip
     - name: upload RISCV
       uses: actions/upload-artifact@v3
       with:
           name: Linux-RISCV
           path: |
-            GetBitches-RISCV.out
+            Linux-RISCV.zip
   buildMac:
 
     runs-on: macos-latest
