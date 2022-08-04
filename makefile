@@ -6,10 +6,10 @@ windows:
 	x86_64-w64-mingw32-gcc -Os -o GetBitches.exe ./c/GetBitches.c
 	x86_64-w64-mingw32-strip ./GetBitches.exe
 mac:
-	gcc ./c/GetBitches.c -o GetBitches.app -Os
+	gcc ./c/GetBitches.c -o GetBitches.app -Os -Wno-Unused-result
 	strip ./GetBitches.app
 raspi:
-	arm-linux-gnueabihf-gcc ./c/GetBitches.c -o GetBitches-raspi.out -Os
+	arm-linux-gnueabihf-gcc ./c/GetBitches.c -o GetBitches-raspi.out -Os 
 	arm-linux-gnueabihf-strip ./GetBitches-raspi.out
 aarch64:
 	aarch64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-aarch64.out -Os

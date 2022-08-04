@@ -27,7 +27,7 @@ jobs:
             *.exe
   buildLinux:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-9-multilib -y
+        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-11-multilib -y
         make linux
         make raspi
         make aarch64
