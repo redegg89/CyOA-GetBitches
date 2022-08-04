@@ -30,10 +30,10 @@ riscv:
 	riscv64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-RISCV.out -Os
 	riscv64-linux-gnu-strip ./GetBitches-RISCV.out
 package:
-	zip Linux-amd64 GetBitches.out
-	zip Linux-raspi GetBitches-raspi.out
-	zip Linux-aarch64 GetBitches-aarch64.out
-	zip Linux-i386 GetBitches-i386.out
-	zip Linux-PPC GetBitches-PowerPC.out
-	zip Linux-MIPS GetBitches-MIPS.out
-	zip Linux-RISCV GetBitches-RISCV.out
+	tar -czvf Linux-amd64.tar.gz GetBitches.out
+	tar -czvf Linux-raspi.tar.gz GetBitches-raspi.out
+	tar -czvf Linux-aarch64.tar.gz GetBitches-aarch64.out
+	tar -czvf Linux-i386.tar.gz GetBitches-i386.out
+	tar -czvf Linux-PPC.tar.gz GetBitches-PowerPC.out
+	tar -czvf Linux-MIPS.tar.gz GetBitches-MIPS.out
+	tar -czvf Linux-RISCV.tar.gz GetBitches-RISCV.out

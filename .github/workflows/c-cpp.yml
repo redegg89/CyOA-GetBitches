@@ -21,13 +21,13 @@ jobs:
         make win64
         make win32
     - name: upload win64
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: windows-x86_64
           path: |
             GetBitches-win64.exe
     - name: upload win32
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: windows-x86
           path: |
@@ -53,47 +53,47 @@ jobs:
         sudo chmod +x *.out
         make package
     - name: upload x86_64
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-amd64
           path: |
-            Linux.zip
+            Linux-amd64.tar.gz
     - name: upload i386
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-i386
           path: |
-            Linux-i386.zip
+            Linux-i386.tar.gz
     - name: upload raspi
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-raspi
           path: |
-            Linux-raspi.zip
+            Linux-raspi.tar.gz
     - name: upload aarch64
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-aarch64
           path: |
-            Linux-aarch64.zip
+            Linux-aarch64.tar.gz
     - name: upload PPC
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-PPC
           path: |
-            Linux-PowerPC.zip
+            Linux-PPC.tar.gz
     - name: upload MIPS
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-MIPS
           path: |
-            Linux-MIPS.zip
+            Linux-MIPS.tar.gz
     - name: upload RISCV
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Linux-RISCV
           path: |
-            Linux-RISCV.zip
+            Linux-RISCV.tar.gz
   buildMac:
 
     runs-on: macos-latest
@@ -105,7 +105,7 @@ jobs:
     - name: make
       run: make mac
     - name: upload
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
           name: Mac-build
           path: |
