@@ -35,12 +35,13 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-9-multilib musl -y
+        sudo apt install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-9-multilib gcc-riscv64-linux-gnu  musl -y
         make linux
         make raspi
         make aarch64
         make i386
         make ppc
+        make riscv
         make mips
     - name: upload x86_64
       uses: actions/upload-artifact@v3
@@ -78,6 +79,12 @@ jobs:
           name: Linux-MIPS
           path: |
             GetBitches-MIPS.out
+    - name: upload RISCV
+      uses: actions/upload-artifact@v3
+      with:
+          name: Linux-RISCV
+          path: |
+            GetBitches-RISCV.out
   buildMac:
 
     runs-on: macos-latest

@@ -23,3 +23,6 @@ ppc:
 mips:
 	mips-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-MIPS.out -Os
 	mips-linux-gnu-strip ./GetBitches-MIPS.out
+riscv:
+	riscv64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-RISCV.out -Os
+	riscv64-linux-gnu-strip ./GetBitches-RISCV.out
