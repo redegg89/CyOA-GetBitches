@@ -9,14 +9,14 @@
 
 void nam()
 {
-  char name[MAX_NAME_SZ];
+  char *name = malloc(MAX_NAME_SZ);
   char nameselect[3];
   while(1)
   {
     printf("What is your name?\n");
-    scanf("%s", &name);
+    scanf("%s", name);
     printf("Your name is: %s? [Y/n] \n", name);
-    scanf("%s", &nameselect);
+    scanf("%s", nameselect);
     if(strcmp(nameselect, "y") == 0 || strcmp(nameselect, "Y") == 0 || strcmp(nameselect, "1") == 0)
     {
       break;

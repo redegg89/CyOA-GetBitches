@@ -44,7 +44,7 @@ jobs:
       run: |
         sudo add-apt-repository ppa:apt-fast/stable
         sudo apt-get -y install apt-fast
-        sudo apt-fast install gcc-multilib-powerpc-linux-gnu gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu gcc-mips-linux-gnu gcc-multilib-i686-linux-gnu gcc-9-multilib gcc-riscv64-linux-gnu -y
+        sudo apt-fast install gcc-9-multilib-powerpc-linux-gnu gcc-9-arm-linux-gnueabihf gcc-9-aarch64-linux-gnu gcc-9-mips-linux-gnu gcc-9-multilib-i686-linux-gnu gcc-9-multilib gcc-9-riscv64-linux-gnu gcc-9 -y
         make all -j4
         sudo chmod +x *.out
         make package
