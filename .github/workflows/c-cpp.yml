@@ -32,6 +32,167 @@ jobs:
           name: windows-x86
           path: |
             GetBitches-win32.exe
+  buildamd64:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        make linux
+        sudo chmod +x *.out
+        tar -czvf Linux-amd64.tar.gz GetBitches.out
+    - name: upload x86_64
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-amd64
+          path: |
+            Linux-amd64.tar.gz
+  buildi386:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        sudo apt-get -y install gcc-9-multilib-i686-linux-gnu gcc-9-multilib gcc-9
+        make i386
+        sudo chmod +x *.out
+        tar -czvf Linux-i386.tar.gz GetBitches-i386.out
+    - name: upload i386
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-i386
+          path: |
+            Linux-i386.tar.gz
+  buildraspi:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        sudo apt-get -y install gcc-9-arm-linux-gnueabihf gcc-9-multilib gcc-9
+        make raspi
+        sudo chmod +x *.out
+        tar -czvf Linux-raspi.tar.gz GetBitches-raspi.out
+    - name: upload raspi
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-raspi
+          path: |
+            Linux-raspi.tar.gz
+
+  buildaarch64:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        sudo apt-get -y install gcc-9-aarch64-linux-gnu gcc-9-multilib gcc-9
+        make aarch64
+        sudo chmod +x *.out
+        tar -czvf Linux-aarch64.tar.gz GetBitches-aarch64.out
+    - name: upload aarch64
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-aarch64
+          path: |
+            Linux-aarch64.tar.gz
+
+  buildPPC:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        sudo apt-get -y install gcc-9-multilib-powerpc-linux-gnu gcc-9-multilib gcc-9
+        make ppc
+        sudo chmod +x *.out
+        tar -czvf Linux-PPC.tar.gz GetBitches-PowerPC.out
+    - name: upload PPC
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-PPC
+          path: |
+            Linux-PPC.tar.gz
+
+  buildMIPS:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        sudo apt-get -y install gcc-9-mips-linux-gnu gcc-9-multilib gcc-9 -y
+        make mips
+        sudo chmod +x *.out
+        tar -czvf Linux-MIPS.tar.gz GetBitches-MIPS.out
+    - name: upload MIPS
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-MIPS
+          path: |
+            Linux-MIPS.tar.gz
+
+  buildRISCV:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: |
+        sudo apt-get -y install gcc-9-riscv64-linux-gnu gcc-9-multilib gcc-9 -y
+        make riscv
+        sudo chmod +x *.out
+        tar -czvf Linux-RISCV.tar.gz GetBitches-RISCV.out
+    - name: upload RISCV
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Linux-RISCV
+          path: |
+            Linux-RISCV.tar.gz
+
+  buildMac:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    #- name: configure
+    #  run: ./configure
+    - name: make
+      run: make mac
+    - name: upload
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: Mac-build
+          path: |
+            *.app
+
   buildLinux:
 
     runs-on: ubuntu-20.04
@@ -90,19 +251,3 @@ jobs:
           name: Linux-RISCV
           path: |
             Linux-RISCV.tar.gz
-  buildMac:
-
-    runs-on: macos-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    #- name: configure
-    #  run: ./configure
-    - name: make
-      run: make mac
-    - name: upload
-      uses: actions/upload-artifact@v3.1.0
-      with:
-          name: Mac-build
-          path: |
-            *.app
