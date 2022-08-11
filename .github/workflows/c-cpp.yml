@@ -61,7 +61,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-9-multilib-i686-linux-gnu gcc-9-multilib
+        sudo apt-get -y install gcc-9-multilib-i686-linux-gnu gcc-9-multilib gcc-9
         make i386
         sudo chmod +x *.out
         tar -czvf Linux-i386.tar.gz GetBitches-i386.out
@@ -81,7 +81,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-9-arm-linux-gnueabihf gcc-9-multilib
+        sudo apt-get -y install gcc-9-arm-linux-gnueabihf gcc-9-multilib gcc-9
         make raspi
         sudo chmod +x *.out
         tar -czvf Linux-raspi.tar.gz GetBitches-raspi.out
@@ -102,7 +102,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-9-aarch64-linux-gnu gcc-9-multilib
+        sudo apt-get -y install gcc-9-aarch64-linux-gnu gcc-9-multilib gcc-9
         make aarch64
         sudo chmod +x *.out
         tar -czvf Linux-aarch64.tar.gz GetBitches-aarch64.out
@@ -123,7 +123,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-9-multilib-powerpc-linux-gnu gcc-9-multilib
+        sudo apt-get -y install gcc-9-multilib-powerpc-linux-gnu gcc-9-multilib gcc-9
         make ppc
         sudo chmod +x *.out
         tar -czvf Linux-PPC.tar.gz GetBitches-PowerPC.out
@@ -144,7 +144,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-9-mips-linux-gnu gcc-9-multilib -y
+        sudo apt-get -y install gcc-9-mips-linux-gnu gcc-9-multilib gcc-9 -y
         make mips
         sudo chmod +x *.out
         tar -czvf Linux-MIPS.tar.gz GetBitches-MIPS.out
@@ -165,7 +165,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-9-riscv64-linux-gnu gcc-9-multilib -y
+        sudo apt-get -y install gcc-9-riscv64-linux-gnu gcc-9-multilib gcc-9 -y
         make riscv
         sudo chmod +x *.out
         tar -czvf Linux-RISCV.tar.gz GetBitches-RISCV.out
