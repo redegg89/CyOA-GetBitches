@@ -1,5 +1,5 @@
 linux:
-	gcc ./c/GetBitches.c -o GetBitches.out -Os
+	gcc ./c/GetBitches.c -o GetBitches.out -Os -lSDL2 -lSDL2_mixer
 	strip ./GetBitches.out
 
 win64:
@@ -12,20 +12,20 @@ mac:
 	gcc ./c/GetBitches.c -o GetBitches.app -Os -Wno-Unused-result
 	strip ./GetBitches.app
 raspi:
-	arm-linux-gnueabihf-gcc ./c/GetBitches.c -o GetBitches-raspi.out -Os 
+	arm-linux-gnueabihf-gcc ./c/GetBitches.c -o GetBitches-raspi.out -Os -lSDL2 -lSDL2_mixer
 	arm-linux-gnueabihf-strip ./GetBitches-raspi.out
 aarch64:
-	aarch64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-aarch64.out -Os
+	aarch64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-aarch64.out -Os -lSDL2 -lSDL2_mixer
 	aarch64-linux-gnu-strip ./GetBitches-aarch64.out
 i386:
-	gcc -m32 ./c/GetBitches.c -o GetBitches-i386.out -Os
+	gcc -m32 ./c/GetBitches.c -o GetBitches-i386.out -Os -lSDL2 -lSDL2_mixer
 	strip ./GetBitches-i386.out
 ppc:
-	powerpc-linux-gnu-gcc  ./c/GetBitches.c -o GetBitches-PowerPC.out -Os
+	powerpc-linux-gnu-gcc  ./c/GetBitches.c -o GetBitches-PowerPC.out -Os -lSDL2 -lSDL2_mixer
 	powerpc-linux-gnu-strip ./GetBitches-PowerPC.out
 mips:
-	mips-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-MIPS.out -Os
+	mips-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-MIPS.out -Os -lSDL2 -lSDL2_mixer
 	mips-linux-gnu-strip ./GetBitches-MIPS.out
 riscv:
-	riscv64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-RISCV.out -Os
+	riscv64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-RISCV.out -Os -lSDL2 -lSDL2_mixer
 	riscv64-linux-gnu-strip ./GetBitches-RISCV.out
