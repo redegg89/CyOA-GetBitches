@@ -29,12 +29,3 @@ mips:
 riscv:
 	riscv64-linux-gnu-gcc ./c/GetBitches.c -o GetBitches-RISCV.out -Os
 	riscv64-linux-gnu-strip ./GetBitches-RISCV.out
-all: linux raspi aarch64 i386 ppc mips riscv
-package:
-	tar -czvf Linux-amd64.tar.gz GetBitches.out
-	tar -czvf Linux-raspi.tar.gz GetBitches-raspi.out
-	tar -czvf Linux-aarch64.tar.gz GetBitches-aarch64.out
-	tar -czvf Linux-i386.tar.gz GetBitches-i386.out
-	tar -czvf Linux-PPC.tar.gz GetBitches-PowerPC.out
-	tar -czvf Linux-MIPS.tar.gz GetBitches-MIPS.out
-	tar -czvf Linux-RISCV.tar.gz GetBitches-RISCV.out
