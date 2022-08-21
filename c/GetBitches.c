@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "AudioPlayer.h"
 #include "GetBitches.h"
 #include "bar.c"
 #include "chicken.c"
 #include "slow.c"
-#define MAX_NAME_SZ 128
+#define MAX_NAME_SZ 64
 
 void nam()
 {
   char *name = malloc(MAX_NAME_SZ);
-  char nameselect[3];
+  char *nameselect = malloc(1);
   while(1)
   {
     printf("What is your name?\n");
@@ -19,14 +20,17 @@ void nam()
     scanf("%s", nameselect);
     if(strcmp(nameselect, "y") == 0 || strcmp(nameselect, "Y") == 0 || strcmp(nameselect, "1") == 0)
     {
+      free(nameselect);
       break;
     }
   }
 }
 
 int main() {
+  PlaySound("res/bgm.wav", 1, 0);
   clear();
   nam();
+  FreeSound();
   while(1)
   {
     input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
