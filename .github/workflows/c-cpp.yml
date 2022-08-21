@@ -42,7 +42,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get install -y libsdl2-dev
+        sudo apt-get install -y libsdl2-dev libsdl2-mixer-dev
         make linux
         sudo chmod +x *.out
         tar -czvf Linux-amd64.tar.gz GetBitches.out
@@ -64,7 +64,7 @@ jobs:
       run: |        
         sudo add-apt-repository ppa:apt-fast/stable
         sudo apt-get -y install apt-fast
-        sudo apt-fast install gcc-9-multilib-i686-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev -y
+        sudo apt-fast install gcc-9-multilib-i686-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev libsdl2-mixer-dev -y
         make i386
         sudo chmod +x *.out
         tar -czvf Linux-i386.tar.gz GetBitches-i386.out
@@ -84,7 +84,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-arm-linux-gnueabihf gcc-9-arm-linux-gnueabihf gcc-9-multilib gcc-9 libsdl2-dev
+        sudo apt-get -y install gcc-arm-linux-gnueabihf gcc-9-arm-linux-gnueabihf gcc-9-multilib gcc-9 libsdl2-dev libsdl2-mixer-dev
         make raspi
         sudo chmod +x *.out
         tar -czvf Linux-raspi.tar.gz GetBitches-raspi.out
@@ -105,7 +105,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-aarch64-linux-gnu gcc-9-aarch64-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev
+        sudo apt-get -y install gcc-aarch64-linux-gnu gcc-9-aarch64-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev libsdl2-mixer-dev
         make aarch64
         sudo chmod +x *.out
         tar -czvf Linux-aarch64.tar.gz GetBitches-aarch64.out
@@ -126,7 +126,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-multilib-powerpc-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev
+        sudo apt-get -y install gcc-multilib-powerpc-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev libsdl2-mixer-dev
         make ppc
         sudo chmod +x *.out
         tar -czvf Linux-PPC.tar.gz GetBitches-PowerPC.out
@@ -147,7 +147,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-mips-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev
+        sudo apt-get -y install gcc-mips-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev libsdl2-mixer-dev
         make mips
         sudo chmod +x *.out
         tar -czvf Linux-MIPS.tar.gz GetBitches-MIPS.out
@@ -168,7 +168,7 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
-        sudo apt-get -y install gcc-riscv64-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev
+        sudo apt-get -y install gcc-riscv64-linux-gnu gcc-9-multilib gcc-9 libsdl2-dev libsdl2-mixer-dev
         make riscv
         sudo chmod +x *.out
         tar -czvf Linux-RISCV.tar.gz GetBitches-RISCV.out
