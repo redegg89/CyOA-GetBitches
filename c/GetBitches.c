@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#ifdef SDL
 #include "AudioPlayer.h"
+#else
+#include "PlayerAudio.h"
+#endif
 #include "GetBitches.h"
 #include "bar.c"
 #include "chicken.c"
@@ -27,7 +31,7 @@ void nam()
 }
 
 int main() {
-  PlaySound("res/bgm.wav", 1, 0);
+  PlaySound("res/bgm1.wav", 1, 0);
   clear();
   nam();
   FreeSound();

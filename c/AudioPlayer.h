@@ -15,7 +15,8 @@ void PlaySound(char file[], int isBGM, int track)
     channel = Mix_PlayChannel(track, sound, isBGM); //Plays the sound defined above on the channel specified (-1 is first non-playing track), with second argument being used for looping the audio
 }
 
-void FreeSound(){
+void FreeSound()
+{
     Mix_FreeChunk(sound);
     Mix_CloseAudio();
     SDL_Quit();
