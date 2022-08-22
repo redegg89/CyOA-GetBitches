@@ -13,3 +13,5 @@ c/a.out
 builds/*
 c/a.exe
 a.out
+GetBitches-win32.exe
+GetBitches-win64.exe

@@ -31,7 +31,7 @@ void nam()
 }
 
 int main() {
-  PlaySound("res/bgm1.wav", 1, 0);
+  playSound("res/bgm1.wav", 1, 0);
   clear();
   nam();
   while(1)
@@ -92,4 +92,4 @@ int main() {
     }
   }
   return 0;
-} 
+}

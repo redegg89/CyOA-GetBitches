@@ -6,7 +6,7 @@
     int audio_channels = 2;
     Mix_Chunk *sound = NULL;
 
-void PlaySound(char file[], int isBGM, int track)
+void playSound(char file[], int isBGM, int track)
 {
     SDL_Init(SDL_INIT_AUDIO);
     Mix_OpenAudio(audio_rate, AUDIO_S16, audio_channels, audio_buffers);
