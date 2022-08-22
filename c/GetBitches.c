@@ -6,6 +6,7 @@
 #else
 #include "PlayerAudio.h"
 #endif
+#include "AudioPlayer.h"
 #include "GetBitches.h"
 #include "bar.c"
 #include "chicken.c"
@@ -34,7 +35,6 @@ int main() {
   PlaySound("res/bgm1.wav", 1, 0);
   clear();
   nam();
-  FreeSound();
   while(1)
   {
     input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
