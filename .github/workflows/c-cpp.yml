@@ -45,7 +45,8 @@ jobs:
         sudo apt-get install -y libsdl2-dev libsdl2-mixer-dev
         make linux
         sudo chmod +x *.out
-        tar -czvf Linux-amd64.tar.gz GetBitches.out c/res
+        mv GetBitches.out ./c/
+        tar -czvf Linux-amd64.tar.gz c/GetBitches.out c/res
     - name: upload x86_64
       uses: actions/upload-artifact@v3.1.0
       with:
