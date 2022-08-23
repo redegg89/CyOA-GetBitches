@@ -18,7 +18,15 @@ jobs:
     - name: make
       run: |
         sudo apt install -y mingw-w64
-        make win64
+        cd c
+        wget https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2/SDL2_mixer-devel-2.6.2-mingw.tar.gz
+        tar -xvf ./SDL2_mixer-devel-2.6.2-mingw.tar.gz
+        cd SDL2_mixer-devel-2.6.2-mingw.tar.gz
+        sudo make install-package arch=x86_64-w64-mingw32 prefix=/usr
+        cd ..
+        wget https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2/SDL2_mixer-2.6.2.zip
+        unzip SDL2_mixer-2.6.2.zip
+        make win64-sdl
         make win32
     - name: upload win64
       uses: actions/upload-artifact@v3.1.0
@@ -26,6 +34,8 @@ jobs:
           name: windows-x86_64
           path: |
             GetBitches-win64.exe
+            res
+            *.dll
     - name: upload win32
       uses: actions/upload-artifact@v3.1.0
       with:
@@ -43,9 +53,9 @@ jobs:
     - name: make
       run: |
         sudo apt-get install -y libsdl2-dev libsdl2-mixer-dev
+        cd c
         make linux
         sudo chmod +x *.out
-        mv c/res .
         tar -czvf Linux-amd64.tar.gz GetBitches.out res
     - name: upload x86_64
       uses: actions/upload-artifact@v3.1.0
@@ -66,6 +76,7 @@ jobs:
         sudo add-apt-repository ppa:apt-fast/stable
         sudo apt-get -y install apt-fast
         sudo apt-fast install gcc-9-multilib-i686-linux-gnu gcc-9-multilib gcc-9 -y
+        cd c
         make i386
         sudo chmod +x *.out
         tar -czvf Linux-i386.tar.gz GetBitches-i386.out
@@ -86,6 +97,7 @@ jobs:
     - name: make
       run: |
         sudo apt-get -y install gcc-arm-linux-gnueabihf gcc-9-arm-linux-gnueabihf gcc-9-multilib gcc-9
+        cd c
         make raspi
         sudo chmod +x *.out
         tar -czvf Linux-raspi.tar.gz GetBitches-raspi.out
@@ -107,6 +119,7 @@ jobs:
     - name: make
       run: |
         sudo apt-get -y install gcc-aarch64-linux-gnu gcc-9-aarch64-linux-gnu gcc-9-multilib gcc-9
+        cd c
         make aarch64
         sudo chmod +x *.out
         tar -czvf Linux-aarch64.tar.gz GetBitches-aarch64.out
@@ -128,6 +141,7 @@ jobs:
     - name: make
       run: |
         sudo apt-get -y install gcc-multilib-powerpc-linux-gnu gcc-9-multilib gcc-9
+        cd c
         make ppc
         sudo chmod +x *.out
         tar -czvf Linux-PPC.tar.gz GetBitches-PowerPC.out
@@ -149,6 +163,7 @@ jobs:
     - name: make
       run: |
         sudo apt-get -y install gcc-mips-linux-gnu gcc-9-multilib gcc-9
+        cd c
         make mips
         sudo chmod +x *.out
         tar -czvf Linux-MIPS.tar.gz GetBitches-MIPS.out
@@ -170,6 +185,7 @@ jobs:
     - name: make
       run: |
         sudo apt-get -y install gcc-riscv64-linux-gnu gcc-9-multilib gcc-9
+        cd c
         make riscv
         sudo chmod +x *.out
         tar -czvf Linux-RISCV.tar.gz GetBitches-RISCV.out
@@ -189,7 +205,7 @@ jobs:
     #- name: configure
     #  run: ./configure
     - name: make
-      run: make mac
+      run: cd c && make mac
     - name: upload
       uses: actions/upload-artifact@v3.1.0
       with:

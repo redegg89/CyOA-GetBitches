@@ -30,7 +30,7 @@ void nam()
   }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
   playSound("res/bgm1.wav", 1, 0);
   clear();
   nam();
