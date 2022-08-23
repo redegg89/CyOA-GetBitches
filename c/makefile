@@ -6,7 +6,7 @@ win64:
 	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe ./GetBitches.c
 	x86_64-w64-mingw32-strip ./GetBitches-win64.exe
 win64-sdl:
-	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe ./c/GetBitches.c -DSDL -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -mwindows
+	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe GetBitches.c -DSDL -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -mwindows
 	x86_64-w64-mingw32-strip ./GetBitches-win64.exe
 win32:
 	i686-w64-mingw32-gcc -m32 -Os -o GetBitches-win32.exe ./GetBitches.c
