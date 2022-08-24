@@ -20,7 +20,7 @@ jobs:
         sudo apt install -y mingw-w64
         cd c
         ./setup-sdl.sh
-        x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe GetBitches.c -DSDL -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -mwindows
+        make win64-sdl
         make win32
     - name: upload win64
       uses: actions/upload-artifact@v3.1.0
