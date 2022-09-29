@@ -25,7 +25,15 @@
 
 void playSound(char file[], int isBGM, int track)
 {
-    SDL_Init(SDL_INIT_AUDIO);
+    if(SDL_Init(SDL_INIT_AUDIO) == -1)
+    {
+        #ifdef __LINUX__
+        printf("SDL could not initialize. Please run one of the following commands as root:\nDebian-based: apt-get install libsdl2\nGentoo: emerge libsdl2\nFedora and similar: dnf install SDL2\nArch: pacman -S sdl2\n\nOther directions can be found at: https://wiki.libsdl.org/Installation\n");
+        #elif _WIN32
+        printf("SDL could not initialize. Please make sure \"SDL2.dll\" is in the game directory.\n");
+        #endif
+        exit(-1);
+    }
     Mix_OpenAudio(audio_rate, AUDIO_S16, audio_channels, audio_buffers);
     sound = Mix_LoadWAV(file); //Loads WAV file from first argument
     int channel;

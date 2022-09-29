@@ -21,6 +21,7 @@ jobs:
         cd c
         ./setup-sdl.sh
         make win64-sdl
+        make win64
         make win32
     - name: upload win64
       uses: actions/upload-artifact@v3.1.0
@@ -36,6 +37,11 @@ jobs:
           name: windows-x86
           path: |
             c/GetBitches-win32.exe
+    - name: upload win64 no SDL
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: windows-x86_64-noSDL
+          path: c/GetBitches-win64-noSDL.exe
   buildamd64:
 
     runs-on: ubuntu-20.04

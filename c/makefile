@@ -5,8 +5,8 @@ linux-musl:
 	musl-gcc ./GetBitches.c -o GetBitches.out -Os -l:libSDL2.a -l:libSDL2_mixer.a -DSDL
 	strip ./GetBitches.out
 win64:
-	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe ./GetBitches.c
-	x86_64-w64-mingw32-strip ./GetBitches-win64.exe
+	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64-noSDL.exe ./GetBitches.c
+	x86_64-w64-mingw32-strip ./GetBitches-win64-noSDL.exe
 win64-sdl:
 	x86_64-w64-mingw32-gcc -Os -o GetBitches-win64.exe GetBitches.c -DSDL -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -mwindows
 	x86_64-w64-mingw32-strip ./GetBitches-win64.exe
