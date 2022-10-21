@@ -31,7 +31,7 @@ char *nam()
 int main(int argc, char *argv[]) {
   playSound("res/bgm1.wav", 1, 0);
   clear();
-  char[] name = nam();
+  char *name = nam();
   while(1)
   {
     input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
