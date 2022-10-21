@@ -70,7 +70,7 @@ jobs:
     - name: upload x86_64 no SDL
       uses: actions/upload-artifact@v3.1.0
       with:
-          name: Linux-amd64
+          name: Linux-amd64-noSDL
           path: |
             c/Linux-amd64-noSDL.tar.gz
   buildi386:
