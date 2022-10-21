@@ -52,9 +52,12 @@ jobs:
     #  run: ./configure
     - name: make
       run: |
+        cd c
+        make linux-noSDL
+        sudo chmod +x *.out
+        tar -czvf Linux-amd64-noSDL.tar.gz GetBitches.out
         sudo apt-get update -y
         sudo apt-get install -y libsdl2-dev libsdl2-mixer-dev
-        cd c
         make linux
         sudo chmod +x *.out
         tar -czvf Linux-amd64.tar.gz GetBitches.out res
@@ -64,6 +67,7 @@ jobs:
           name: Linux-amd64
           path: |
             c/Linux-amd64.tar.gz
+            c/Linux-amd64-noSDL.tar.gz
   buildi386:
 
     runs-on: ubuntu-20.04

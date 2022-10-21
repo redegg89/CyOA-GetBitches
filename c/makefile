@@ -1,6 +1,9 @@
 linux:
 	gcc ./GetBitches.c -o GetBitches.out -Os -lSDL2 -lSDL2_mixer -DSDL
 	strip ./GetBitches.out
+linux-noSDL:
+	gcc ./GetBitches.c -o GetBitches.out -Os
+	strip ./GetBitches.out
 linux-musl:
 	musl-gcc ./GetBitches.c -o GetBitches.out -Os -l:libSDL2.a -l:libSDL2_mixer.a -DSDL
 	strip ./GetBitches.out

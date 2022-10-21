@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #ifdef SDL
 #include "AudioPlayer.h"
@@ -10,22 +9,21 @@
 #include "bar.c"
 #include "chicken.c"
 #include "slow.c"
-#define MAX_NAME_SZ 64
+#define MAX_NAME_SZ 256
 
-void nam()
+char[] nam()
 {
   char *name = malloc(MAX_NAME_SZ);
-  char *nameselect = malloc(1);
+  char nameselect;
   while(1)
   {
     printf("What is your name?\n");
     scanf("%s", name);
     printf("Your name is: %s? [Y/n] \n", name);
-    scanf("%s", nameselect);
-    if(strcmp(nameselect, "y") == 0 || strcmp(nameselect, "Y") == 0 || strcmp(nameselect, "1") == 0)
+    scanf(" %c", nameselect);
+    if(nameselect == "y" || nameselect == "Y" || nameselect == "1")
     {
-      free(nameselect);
-      break;
+      return name;
     }
   }
 }
@@ -33,7 +31,7 @@ void nam()
 int main(int argc, char *argv[]) {
   playSound("res/bgm1.wav", 1, 0);
   clear();
-  nam();
+  name = nam();
   while(1)
   {
     input("Which route do you want to go?\n1. Slow and steady: More reliable, typically used for long-term relationships\n2. Get Bitches: Quick, great for one-night stands, almost guaranteed to fall off sometime in the next month\n");
