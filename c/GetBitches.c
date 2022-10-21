@@ -14,7 +14,7 @@
 char *nam()
 {
   char *name = malloc(MAX_NAME_SZ);
-  char nameselect;
+  char *nameselect;
   while(1)
   {
     printf("What is your name?\n");
