@@ -26,7 +26,7 @@
     int audio_channels = 2;
     Mix_Chunk *sound = NULL;
 
-void playSound_3arg(char file[], int loop, int track)
+void playSound_3arg(char file[], int loop, int track)    //Start of multi-argument playSound. Is there a better way to do this since it's a lot of copy-pasted code? Probably, but it'll work for now
 {
     if(SDL_Init(SDL_INIT_AUDIO) == -1)
     {
