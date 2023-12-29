@@ -29,7 +29,7 @@ char *nam()
 }
 
 int main(int argc, char *argv[]) {
-  playSound3("res/bgm1.wav", 1, 0);
+  playSound("res/bgm1.wav", 1, 0);
   clear();
   char *name = nam();
   while(1)

@@ -17,6 +17,8 @@
 */
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
+#define GET_MACRO(_1,_2,_3,NAME,...) NAME
+#define playSound(...) GET_MACRO(__VA_ARGS__, playSound3, playSound2, playSound1)(__VA_ARGS__)
 
 //https://stackoverflow.com/questions/17302913/generics-for-multiparameter-c-functions-in-c11/25715458#25715458
 
@@ -39,7 +41,7 @@ void playSound_init()
     Mix_OpenAudio(audio_rate, AUDIO_S16, audio_channels, audio_buffers);
 }
 
-void playSound3(char file[], int loop, int track)    //Start of multi-argument playSound. Is there a better way to do this since it's a lot of copy-pasted code? Probably, but it'll work for now
+void playSound3(char file[], int loop, int track)    //Start of multi-argument playSound. Is there a better way to do this since it's a lot of copy-pasted code? Absolutely, it didn't even work right iirc
 {
     playSound_init();
     sound = Mix_LoadWAV(file); /*Loads WAV file from first argument*/
@@ -47,7 +49,7 @@ void playSound3(char file[], int loop, int track)    //Start of multi-argument p
     channel = Mix_PlayChannel(track, sound, loop); /*Plays the sound defined above on the channel specified (-1 is first non-playing track), with second argument being used for looping the audio*/
 }
 
-void playSound2(char file[], int loop)
+void playSound2(char file[], int loop) 
 {
     playSound_init();
     playSound3(file, loop, -1);

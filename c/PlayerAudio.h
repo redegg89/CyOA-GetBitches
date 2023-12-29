@@ -16,7 +16,4 @@
     License along with this library; if not, it can be found at https://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt
 */
 void playSound(char file[], int isBGM, int track){}
-void playSound3(char file[], int isBGM, int track){}
-void playSound2(char file[], int isBGM, int track){}
-void playSound1(char file[], int isBGM, int track){}
 void FreeSound(){}
