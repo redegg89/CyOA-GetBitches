@@ -13,23 +13,23 @@
 
 char *nam()
 {
-  char *name = malloc(MAX_NAME_SZ);
-  char *nameselect;
+  char *nam = malloc(MAX_NAME_SZ);
+  char nameselect;
   while(1)
   {
     printf("What is your name?\n");
-    scanf("%s", name);
-    printf("Your name is: %s? [Y/n] \n", name);
-    scanf(" %c", nameselect);
-    if(nameselect == "y" || nameselect == "Y" || nameselect == "1")
+    scanf("%s", nam);
+    printf("Your name is: %s? [Y/n] \n", nam);
+    scanf(" %s", &nameselect);
+    if(nameselect == 'y' || nameselect == 'Y' || nameselect == '1')
     {
-      return name;
+      return nam;
     }
   }
 }
 
 int main(int argc, char *argv[]) {
-  playSound("res/bgm1.wav", 1, 0);
+  playSound3("res/bgm1.wav", 1, 0);
   clear();
   char *name = nam();
   while(1)
