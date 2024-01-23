@@ -1,0 +1,2 @@
+void rpgStart();
+void battle();

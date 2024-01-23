@@ -16,6 +16,9 @@ win64-sdl:
 win32:
 	i686-w64-mingw32-gcc -m32 -Os -o GetBitches-win32.exe ./GetBitches.c
 	i686-w64-mingw32-strip ./GetBitches-win32.exe
+win32-sdl:
+	i686-w64-mingw32-gcc -m32 -Os -o GetBitches-win32.exe GetBitches.c -DSDL -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -mwindows
+	i686-w64-mingw32-strip ./GetBitches-win32.exe
 mac:
 	gcc ./GetBitches.c -o GetBitches.app -Os -Wno-Unused-result
 	strip ./GetBitches.app

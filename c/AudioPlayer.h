@@ -20,7 +20,7 @@
 #define GET_MACRO(_1,_2,_3,NAME,...) NAME
 #define playSound(...) GET_MACRO(__VA_ARGS__, playSound3, playSound2, playSound1)(__VA_ARGS__)
 
-//https://stackoverflow.com/questions/17302913/generics-for-multiparameter-c-functions-in-c11/25715458#25715458
+//https://stackoverflow.com/questions/11761703/overloading-macro-on-number-of-arguments
 
     int audio_rate = 44100;
     int audio_buffers = 4096;

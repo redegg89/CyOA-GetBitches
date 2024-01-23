@@ -1,3 +1,4 @@
+#include "main.h"
 int BitchesCollected;
 int CollectedBitches[6];
 void AlreadyCollected(int id);

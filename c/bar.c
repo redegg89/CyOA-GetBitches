@@ -34,7 +34,7 @@ void blonde()
   switch(choice)
   {
     case 1:
-      printf("Sure.\n");
+      printf("Sure. That is, If you're up for it %s.\n", name);
       #ifdef _WIN32
       Sleep(1000);
       #else

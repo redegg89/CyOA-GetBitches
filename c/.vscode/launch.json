@@ -5,17 +5,13 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [
-        ""
-      ],
+      "args": [],
       "stopAtEntry": false,
-      "cwd": "/home/andrew/git/CyOA-GetBitches/c-port",
-      "environment": [],
-      "program": "/home/andrew/git/CyOA-GetBitches/c-port/build/Debug/outDebug",
-      "internalConsoleOptions": "openOnSessionStart",
+      "externalConsole": false,
+      "cwd": "/home/andrew/git/CyOA-GetBitches/c",
+      "program": "/home/andrew/git/CyOA-GetBitches/c/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb",
-      "externalConsole": false,
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
